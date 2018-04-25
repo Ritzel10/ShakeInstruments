@@ -4,7 +4,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 
-
+const val COVERED_DISTANCE = 0.5
 abstract class OnCoverListener : SensorEventListener{
     private var wasCovered = false
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
@@ -12,7 +12,7 @@ abstract class OnCoverListener : SensorEventListener{
 
     override fun onSensorChanged(sensorEvent: SensorEvent) {
         val proximityValue = sensorEvent.values[0]
-        val isCoveredNow = proximityValue == 0f
+        val isCoveredNow = proximityValue <= COVERED_DISTANCE
         if(wasCovered && !isCoveredNow){
             onUncover(sensorEvent)
             wasCovered = false

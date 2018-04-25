@@ -15,15 +15,13 @@ abstract class OnShakeListener( private val timeBetweenShake:Long = MIN_TIME_BET
         val currentTime = System.currentTimeMillis()
         if(currentTime - lastShakeTime >= timeBetweenShake){
             lastShakeTime = currentTime
-            val acceleration = calculateAcceleration(sensorEvent.values)
+            val acceleration = calculateAcceleration(sensorEvent.values) - SensorManager.GRAVITY_EARTH
             if(acceleration >= shakeThreshold){
                 onShake(sensorEvent)
             }
         }
     }
-    private fun calculateAcceleration(values:FloatArray):Double{
-        return Math.sqrt(values.map { it * it }.sum().toDouble()) - SensorManager.GRAVITY_EARTH
-    }
+
     abstract fun onShake(sensorEvent: SensorEvent)
 
     companion object {
