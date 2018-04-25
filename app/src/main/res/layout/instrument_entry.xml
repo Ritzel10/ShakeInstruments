@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop">
+
+        <TextView
+            android:id="@+id/instrumentName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="0.1dp"
+            android:background="@color/labelBackground"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="@string/instrument_name_placeholder"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            app:layout_constraintBottom_toTopOf="@+id/space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_weight="1" />
+
+        <ImageView
+            android:id="@+id/instrumentImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/instrument_name_placeholder"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:tint="@color/imageDefault"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_weight="4"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/instrumentImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instrumentName"
+            app:layout_constraintVertical_weight="0.2" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+</android.support.constraint.ConstraintLayout>

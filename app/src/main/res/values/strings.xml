@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShakeInstruments</string>
+    <string name="instrument_name_placeholder">Instrument</string>
+    <string name="shake_text">Shake to play!</string>
+</resources>

@@ -1,0 +1,23 @@
+ [
+   {
+     "name": "tambourine",
+     "imageName": "ic_tambourine",
+     "soundName": "tambourine"
+   },
+   {
+    "name": "maracas",
+    "imageName":  "ic_maracas",
+    "soundName": "maraca"
+ },
+   {
+     "name": "cowbell",
+     "imageName": "ic_cowbell",
+     "soundName": "cowbell"
+   },
+ {
+     "name": "bell",
+     "imageName": "ic_bell",
+     "soundName": "bell"
+ }
+   ]
+
