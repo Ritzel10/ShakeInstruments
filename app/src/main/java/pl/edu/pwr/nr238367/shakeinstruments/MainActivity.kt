@@ -57,9 +57,10 @@ class MainActivity : AppCompatActivity() {
         shakeAnimation = AnimationUtils.loadAnimation(applicationContext, R.anim.shake)
         setSupportActionBar(toolbar)
     }
-    //shake whole card on cover
+    //swipe card when proximity sensor is on
     private fun onCover() {
-        viewPager.startAnimation(shakeAnimation)
+        val nextItem = (currentInstrumentIndex + 1) % InstrumentList.instrumentList.size
+        viewPager.setCurrentItem(nextItem, true)
     }
 
     private fun playSound() {
